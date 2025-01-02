@@ -13,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -22,6 +21,30 @@
     "express": "^4.21.2",
     "net": "^1.0.2",
     "node-fetch": "^3.3.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locle27/locle2210.git"
+  },
+  "bugs": {
+    "url": "https://github.com/locle27/locle2210/issues"
+  },
+  "homepage": "https://github.com/locle27/locle2210#readme",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@eslint/js": "^9.17.0",
+    "babel-loader": "^9.2.1",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.3",
+    "globals": "^15.14.0",
+    "typescript-eslint": "^8.19.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
   }
 }
