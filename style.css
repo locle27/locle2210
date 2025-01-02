@@ -1,0 +1,55 @@
+/* Thêm vào phần <style> trong popup.html */
+
+#wordDetails {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#wordDetails h3 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#wordDetails table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#wordDetails th, #wordDetails td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#wordDetails th {
+    background-color: #f9f9f9;
+    width: 30%;
+}
+
+#wordDetails a {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+#wordDetails a:hover {
+    text-decoration: underline;
+}
+
+/* Thêm hiệu ứng chuyển đổi cho nút "Add" */
+.add-button {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.add-button.show {
+    opacity: 1;
+}

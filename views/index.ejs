@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Details</title>
+</head>
+<body>
+    <h1>Word Details</h1>
+    <ul>
+        <% words.forEach(word => { %>
+            <li>
+                <strong><%= word.word %></strong><br>
+                IPA: <%= word.IPA %><br>
+                Definition: <%= word.Definition %><br>
+                Definitions: <%= word.Definitions %><br>
+                Sentence: <%= word.Sentence %><br>
+                ExtraInfo: <%= word.ExtraInfo %><br>
+                Picture: <%= word.Picture %><br>
+                Description: <%= word.Description %><br>
+                WordFamilies: <%= word.WordFamilies %><br>
+                Vietnamese: <%= word.Vietnamese %><br>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

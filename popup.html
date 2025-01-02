@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 300px;
+            padding: 10px;
+        }
+        #vocabularyList {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .vocab-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 0;
+        }
+        .word-item {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        #wordDetails {
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            display: none;
+        }
+        #wordDetails img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Thêm kiểu cho thông báo */
+        #notification {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50; /* Màu xanh lá */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none; /* Ẩn mặc định */
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        #notification.show {
+            opacity: 1;
+        }
+        /* Thêm kiểu cho thông báo lỗi */
+        #notification.error {
+            background-color: #f44336; /* Màu đỏ */
+        }
+        /* Thêm kiểu cho trạng thái server */
+        #serverStatus {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        #serverStatus .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+            background-color: gray; /* Màu mặc định */
+        }
+        #serverStatus.online .status-indicator {
+            background-color: #4CAF50; /* Xanh lá cho online */
+        }
+        #serverStatus.offline .status-indicator {
+            background-color: #f44336; /* Đỏ cho offline */
+        }
+    </style>
+</head>
+<body>
+    <h2>Vocabulary List</h2>
+    
+    <!-- Phần tử hiển thị trạng thái server -->
+    <div id="serverStatus" class="offline">
+        <div class="status-indicator"></div>
+        <span>Server: Offline</span>
+    </div>
+    
+    <div id="vocabularyList">
+        <!-- Danh sách từ vựng sẽ được hiển thị ở đây -->
+    </div>
+    
+    <input type="text" id="searchInput" placeholder="Search..." style="width: 100%; padding: 5px; margin-bottom: 10px;">
+    
+    <div style="margin-bottom: 10px;">
+        <select id="actionSelector" style="width: 100%; padding: 5px;">
+            <option value="copyAll">Copy All</option>
+            <!-- Thêm các hành động khác nếu cần -->
+        </select>
+    </div>
+    
+    <button id="executeAction" style="width: 100%; padding: 5px; margin-bottom: 5px;">Execute Action</button>
+    <button id="copyPrompt" style="width: 100%; padding: 5px; margin-bottom: 5px;">Copy Prompt</button>
+    <button id="createBlankCsv" style="width: 100%; padding: 5px;">Create Blank CSV</button>
+    
+    <div id="wordDetails">
+        <h3>Word Details</h3>
+        <div id="detailsContent">
+            <!-- Chi tiết từ sẽ được hiển thị ở đây -->
+        </div>
+    </div>
+    
+    <!-- Thêm phần tử thông báo -->
+    <div id="notification"></div>
+    
+    <div id="loading" style="display: none; text-align: center;">
+        <img src="icons/loading.gif" alt="Loading..." style="width: 50px;">
+        <p>Loading...</p>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
